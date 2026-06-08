@@ -1,0 +1,323 @@
+/* ----- RESET & BASE (DRY) ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #fefefe;
+    color: #11181c;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #005c4b;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* buttons (BEM) */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.2s;
+}
+.button--primary {
+    background: #006b5e;
+    color: white;
+}
+.button--primary:hover {
+    background: #005048;
+}
+.button--outline {
+    background: transparent;
+    border: 1.5px solid #006b5e;
+    color: #006b5e;
+}
+.button--secondary {
+    background: #e9ecef;
+    color: #1a2c3e;
+}
+
+/* header */
+.site-header {
+    background: white;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.03);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo__mark {
+    font-size: 1.8rem;
+}
+.logo__text {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.nav-primary {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.nav-primary__link {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+}
+.nav-primary__link--cta {
+    background: #006b5e;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+}
+
+/* hero (grid layout) */
+.hero {
+    padding: 4rem 0;
+    background: #f5faf9;
+}
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.hero__text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.hero__buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.8rem;
+}
+.hero__img img {
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+    object-fit: cover;
+}
+
+/* features (flexbox component alignment) */
+.features {
+    padding: 4rem 0;
+}
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+.features__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.feature-card {
+    flex: 1;
+    min-width: 220px;
+    background: white;
+    border-radius: 32px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+.feature-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+.feature-card__title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* pricing grid */
+.pricing {
+    background: #ffffff;
+    padding: 4rem 0;
+}
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.price-card {
+    background: #f9fbfd;
+    border-radius: 36px;
+    padding: 1.8rem;
+    border: 1px solid #eef2ff;
+    transition: 0.2s;
+}
+.price-card--popular {
+    border: 2px solid #006b5e;
+    position: relative;
+}
+.price-card__badge {
+    position: absolute;
+    top: -12px;
+    left: 1rem;
+    background: #006b5e;
+    color: white;
+    padding: 0.2rem 1rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.price-card__plan {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+.price-card__rate {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+.price-card__rate span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.price-card__list {
+    list-style: none;
+    margin: 1.2rem 0;
+}
+.price-card__list li {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+}
+.price-card__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #006b5e;
+}
+
+/* stations (CLS prevention: explicit width/height images) */
+.stations {
+    padding: 4rem 0;
+    background: #f1f5f9;
+}
+.stations__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.stations__demo {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.stations__demo img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+}
+.stations__list {
+    list-style: none;
+    margin-top: 1rem;
+}
+.stations__list li {
+    margin: 0.8rem 0;
+    font-weight: 500;
+}
+
+/* quality cards (grid + accessibility) */
+.quality {
+    padding: 4rem 0;
+}
+.quality__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+}
+.quality__card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    border-left: 6px solid #006b5e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* footer */
+.site-footer {
+    background: #0f172a;
+    color: #cbd5e6;
+    padding: 3rem 0 2rem;
+}
+.footer__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.footer__logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+}
+.footer__list {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+.footer__list li {
+    margin-bottom: 0.4rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .hero__grid, .stations__wrapper, .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+    .hero__text h1 {
+        font-size: 2.2rem;
+    }
+    .section-title {
+        font-size: 1.7rem;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    .features__list {
+        flex-direction: column;
+    }
+}
