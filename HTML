@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UrbanCycle – sustainable city bike rental. Semantic HTML, CSS Grid/Flexbox, BEM, accessibility, and performance.">
+    <title>UrbanCycle | City Bike Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header__inner">
+            <div class="logo">
+                <div class="logo__mark">🚲</div>
+                <span class="logo__text">UrbanCycle</span>
+            </div>
+            <nav class="nav-primary" aria-label="Main navigation">
+                <a href="#" class="nav-primary__link">Ride</a>
+                <a href="#" class="nav-primary__link">Stations</a>
+                <a href="#" class="nav-primary__link">Pricing</a>
+                <a href="#" class="nav-primary__link nav-primary__link--cta">Get app</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero section – Grid + Flexbox mix -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__text">
+                    <h1>Ride smarter,<br> pedal greener.</h1>
+                    <p>Unlock any bike near you. No docking stress. Pay per minute or subscribe.</p>
+                    <div class="hero__buttons">
+                        <button class="button button--primary">Download app</button>
+                        <button class="button button--outline">See pricing</button>
+                    </div>
+                </div>
+                <div class="hero__img">
+                    <img src="https://www.gstatic.com/webp/gallery/1.webp" alt="Person riding a city bike" width="540" height="360" loading="eager" class="hero__image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features (Flexbox component alignment) -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">How UrbanCycle works</h2>
+                <div class="features__list">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📍</div>
+                        <h3 class="feature-card__title">Find a bike</h3>
+                        <p>Real-time map shows nearby e‑bikes and regular cycles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📱</div>
+                        <h3 class="feature-card__title">Scan & ride</h3>
+                        <p>Unlock with QR code from the app. Helmet included.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔋</div>
+                        <h3 class="feature-card__title">Park anywhere</h3>
+                        <p>Return within designated zones. No station needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing grid (CSS Grid for page structure) -->
+        <section class="pricing">
+            <div class="container">
+                <h2 class="section-title">Simple, fair pricing</h2>
+                <div class="pricing__grid">
+                    <div class="price-card">
+                        <h3 class="price-card__plan">Pay as you go</h3>
+                        <div class="price-card__rate">$0.25 <span>/min</span></div>
+                        <ul class="price-card__list">
+                            <li>No monthly fee</li>
+                            <li>First 10 min free</li>
+                            <li>Pause mode available</li>
+                        </ul>
+                        <button class="button button--secondary">Start ride</button>
+                    </div>
+                    <div class="price-card price-card--popular">
+                        <div class="price-card__badge">Best value</div>
+                        <h3 class="price-card__plan">Weekly pass</h3>
+                        <div class="price-card__rate">$12.99 <span>/week</span></div>
+                        <ul class="price-card__list">
+                            <li>Unlimited 45‑min rides</li>
+                            <li>0.10$/min after</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <button class="button button--primary">Get pass</button>
+                    </div>
+                    <div class="price-card">
+                        <h3 class="price-card__plan">Annual member</h3>
+                        <div class="price-card__rate">$89 <span>/year</span></div>
+                        <ul class="price-card__list">
+                            <li>Unlimited 60‑min rides</li>
+                            <li>Free helmet delivery</li>
+                            <li>3 friend invites</li>
+                        </ul>
+                        <button class="button button--secondary">Join now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Station locator (CLS prevention with explicit dimensions) -->
+        <section class="stations">
+            <div class="container stations__wrapper">
+                <div class="stations__info">
+                    <h2>Find a bike near you</h2>
+                    <p>Over 300 docking zones across the city. All bikes use <strong>WebP</strong> asset format with fixed width/height to prevent layout shift.</p>
+                    <ul class="stations__list">
+                        <li>📍 Downtown Hub – 24 bikes</li>
+                        <li>📍 Central Park – 18 e-bikes</li>
+                        <li>📍 Riverside – 32 bikes</li>
+                    </ul>
+                </div>
+                <div class="stations__demo">
+                    <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Bike station map preview" width="380" height="240" loading="lazy">
+                    <img src="https://www.gstatic.com/webp/gallery/4.webp" alt="User scanning bike" width="380" height="240" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility + quality gate demonstration -->
+        <section class="quality">
+            <div class="container quality__grid">
+                <div class="quality__card">
+                    <h3>✓ W3C valid & semantic</h3>
+                    <p>One &lt;h1&gt;, landmark roles, skip link. Passes automated audit.</p>
+                </div>
+                <div class="quality__card">
+                    <h3>♿ A11Y ready</h3>
+                    <p>High contrast, keyboard navigation, screen reader friendly.</p>
+                </div>
+                <div class="quality__card">
+                    <h3>⚡ DRY + BEM</h3>
+                    <p>External CSS only, no IDs for styling. Block‑element‑modifier naming.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo">UrbanCycle</div>
+                <p>Smart mobility for cleaner cities</p>
+            </div>
+            <div class="footer__contact">
+                <h3>Contact</h3>
+                <ul class="footer__list">
+                    <li>📞 +1 800 555 0192</li>
+                    <li>✉️ hello@urbancycle.demo</li>
+                    <li>📍 San Francisco, CA</li>
+                </ul>
+            </div>
+            <div class="footer__legal">
+                <small>© 2026 UrbanCycle — follows Project 1 structural guidelines</small>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
